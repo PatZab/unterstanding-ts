@@ -8,5 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "lite-server": "^2.6.1"
-  }
+  },
+  "repository": "https://github.com/PatZab/unterstanding-ts.git",
+  "author": "Patrick Zabel <patrick.zabel@exxeta.com>"
 }
