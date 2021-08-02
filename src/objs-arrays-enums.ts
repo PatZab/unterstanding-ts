@@ -4,12 +4,12 @@ enum Role {
   READ_ONLY
 };
 
-const person = {
-    name: 'Paddy',
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    role: Role.ADMIN
-}
+// const person = {
+//     name: 'Paddy',
+//     age: 30,
+//     hobbies: ["Sports", "Cooking"],
+//     role: Role.ADMIN
+// }
 
 
 
