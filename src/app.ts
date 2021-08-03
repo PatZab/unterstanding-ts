@@ -1,43 +1,33 @@
-// Creating a class
-class Department {
-    // This is the usual way to do it
-    // private readonly id: string;
-    // private name: string;
-    private employees: string[] = [];
+interface Greetable {
+    name: string;
 
-    constructor(private readonly id: string, public name: string) { // A shortcut for the initialization for properties
-        // this.id = id;
-        // this.name = n;
+    greet(phrase: string): void;
+}
 
+// More than one interface could be implemented by seperating them with colons.
+class Person implements Greetable{
+    name: string;
+    age = 30;
+
+    constructor(n: string) {
+        this.name = n;
     }
 
-    describe(this: Department) { // The "this" in the arguments list is for TypeScript
-        // "this" refers to this specific object. Without "this" it would refer to an global variable
-        // or one inside the method
-        console.log(`Department (${this.id}): ${this.name}`);
-
-    }
-
-    addEmployee(employee: string) {
-        this.employees.push(employee);
-    }
-
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
+    greet(phrase: string) {
+        console.log(phrase);
     }
 }
 
-// Creating an instance of the class of Department
-const accounting = new Department('d1', 'Accounting');
 
-accounting.addEmployee('Max');
-accounting.addEmployee('Manu');
+let user1: Person;
 
-accounting.printEmployeeInformation();
-accounting.describe();
-//
-// console.log("Department Name: " + accounting.name)
+user1 = {
+    name: 'Max',
+    age: 30,
+    greet(phrase: string) {
+        console.log(phrase + ' ' + this.name);
+    }
+}
 
-// const accountinCopy = {describe: accounting.describe()}
-// accountinCopy.describe();
+user1.greet('Hi ther I am');
+
